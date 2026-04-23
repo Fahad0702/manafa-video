@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@font-face { font-family: 'Neue Plak'; src: url('/manafa-video/fonts/NeuePlak-Regular.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Neue Plak'; src: url('/manafa-video/fonts/NeuePlak-Bold.woff2') format('woff2'); font-weight: 700; }
+
+:root {
+  --color-primary: #03020F;
+  --color-secondary: #1A1A2E;
+  --color-accent: #293BE0;
+  
+  --color-manafa-black: #03020F;
+  --color-manafa-blue: #293BE0;
+  --color-purple: #9139FF;
+  --color-white: #FFFFFF;
+
+  --color-ui-bg: #FFFFFF;
+  --color-ui-text: #1A1A2E;
+  --color-ui-secondary: #6B7280;
+  --color-ui-border: #D1D5DB;
+  --color-ui-hover: #F3F4F6;
+  --color-ui-border-light: #E5E7EB;
+
+  --font-display: 'Neue Plak', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-arabic: 'Cairo', sans-serif;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  
+  --color-manafa-black: var(--color-manafa-black);
+  --color-manafa-blue: var(--color-manafa-blue);
+  --color-purple: var(--color-purple);
+  --color-white: var(--color-white);
+
+  --color-ui-bg: var(--color-ui-bg);
+  --color-ui-text: var(--color-ui-text);
+  --color-ui-secondary: var(--color-ui-secondary);
+  --color-ui-border: var(--color-ui-border);
+  --color-ui-hover: var(--color-ui-hover);
+  --color-ui-border-light: var(--color-ui-border-light);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-arabic: var(--font-arabic);
+}
+
+body {
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-manafa-black);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* GPU compositing & rendering optimizations */
+.scene-root {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+}
+
+/* Promote all framer-motion animated elements to compositor layers */
+[data-framer-component-type],
+[data-motion] {
+  backface-visibility: hidden;
+}
+
+/* Scene container GPU hint */
+.video-scene-wrapper {
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.browser-shadow {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* Custom Utilities for Font Weights — only 400 + 700 allowed */
+.font-plak-regular { font-family: 'Neue Plak', sans-serif; font-weight: 400; }
+.font-plak-bold { font-family: 'Neue Plak', sans-serif; font-weight: 700; }
+
+.font-inter-regular { font-family: 'Inter', sans-serif; font-weight: 400; }
+.font-inter-bold { font-family: 'Inter', sans-serif; font-weight: 700; }
+
+.font-cairo-regular { font-family: 'Cairo', sans-serif; font-weight: 400; }
+.font-cairo-bold { font-family: 'Cairo', sans-serif; font-weight: 700; }
