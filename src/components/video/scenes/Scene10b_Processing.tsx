@@ -8,7 +8,7 @@ const FUNDER_LOGOS = [
   { id: 'snb', src: `${BASE}logos/snb.png`, name: 'SNB' },
   { id: 'sab', src: `${BASE}logos/sab.png`, name: 'SAB' },
   { id: 'sidf', src: `${BASE}logos/sidf.png`, name: 'SIDF' },
-  { id: 'jpmorgan', src: `${BASE}logos/jpmorgan.svg`, name: 'JPMorgan' },
+  { id: 'jpmorgan', src: '', name: 'JPMorgan' },
 ];
 
 export default function Scene10b_Processing() {
@@ -117,11 +117,27 @@ export default function Scene10b_Processing() {
                       animate={{ rotate: -360 }}
                       transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                     >
-                      <img
-                        src={logo.src}
-                        alt={logo.name}
-                        style={{ maxWidth: 36, maxHeight: 36, objectFit: 'contain' }}
-                      />
+                      {logo.id === 'jpmorgan' ? (
+                        <div
+                          style={{
+                            fontFamily: '"Times New Roman", Times, "Liberation Serif", serif',
+                            fontWeight: 700,
+                            fontSize: 11,
+                            color: '#5C402E',
+                            letterSpacing: '-0.02em',
+                            lineHeight: 1,
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          J.P.Morgan
+                        </div>
+                      ) : (
+                        <img
+                          src={logo.src}
+                          alt={logo.name}
+                          style={{ maxWidth: 36, maxHeight: 36, objectFit: 'contain' }}
+                        />
+                      )}
                     </motion.div>
                   </motion.div>
                 );

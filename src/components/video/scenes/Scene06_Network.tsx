@@ -9,7 +9,7 @@ const PARTNERS = [
   { id: 'sec', src: `${BASE}logos/sec.png`, width: 80, height: 68 },
   { id: 'sab', src: `${BASE}logos/sab.png`, width: 110, height: 38 },
   { id: 'sidf', src: `${BASE}logos/sidf.png`, width: 115, height: 44 },
-  { id: 'jpmorgan', src: `${BASE}logos/jpmorgan.svg`, width: 120, height: 26 },
+  { id: 'jpmorgan', src: '', width: 120, height: 26 },
 ];
 
 export default function Scene06_Network() {
@@ -155,11 +155,27 @@ export default function Scene06_Network() {
                 }}
                 transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
               >
-                <img
-                  src={partner.src}
-                  alt={partner.id}
-                  style={{ width: partner.width, height: partner.height, objectFit: 'contain' }}
-                />
+                {partner.id === 'jpmorgan' ? (
+                  <div
+                    style={{
+                      fontFamily: '"Times New Roman", Times, "Liberation Serif", serif',
+                      fontWeight: 700,
+                      fontSize: 26,
+                      color: '#5C402E',
+                      letterSpacing: '-0.02em',
+                      lineHeight: 1,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    J.P.Morgan
+                  </div>
+                ) : (
+                  <img
+                    src={partner.src}
+                    alt={partner.id}
+                    style={{ width: partner.width, height: partner.height, objectFit: 'contain' }}
+                  />
+                )}
               </motion.div>
             );
           })}
