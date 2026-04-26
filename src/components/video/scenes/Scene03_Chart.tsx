@@ -9,11 +9,11 @@ export default function Scene03_Chart() {
   const [showGap, setShowGap] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShowBar1(true), 700);
-    const t2 = setTimeout(() => setShowLabel1(true), 1400);
-    const t3 = setTimeout(() => setShowBar2(true), 1800);
-    const t4 = setTimeout(() => setShowLabel2(true), 2500);
-    const t5 = setTimeout(() => setShowGap(true), 3200);
+    const t1 = setTimeout(() => setShowBar1(true), 800);
+    const t2 = setTimeout(() => setShowLabel1(true), 1500);
+    const t3 = setTimeout(() => setShowBar2(true), 3700);
+    const t4 = setTimeout(() => setShowLabel2(true), 4400);
+    const t5 = setTimeout(() => setShowGap(true), 6800);
     return () => { [t1, t2, t3, t4, t5].forEach(clearTimeout); };
   }, []);
 

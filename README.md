@@ -25,7 +25,6 @@ npm run serve
 - `src/components/video/scenes/` — 15 scenes across 4 acts
 - `src/components/video/VideoTemplate.tsx` — playback engine
 - `src/lib/video/` — timing hooks and utilities
-- `public/vo/` — voiceover audio clips
 - `public/logos/` — brand assets
 - `SCRIPT.md` — full script and timing reference
 

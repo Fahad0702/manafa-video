@@ -40,9 +40,9 @@ export default function Scene02_Data() {
   const [showD3, setShowD3] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShowD1(true), 350);
-    const t2 = setTimeout(() => setShowD2(true), 750);
-    const t3 = setTimeout(() => setShowD3(true), 1150);
+    const t1 = setTimeout(() => setShowD1(true), 600);
+    const t2 = setTimeout(() => setShowD2(true), 3500);
+    const t3 = setTimeout(() => setShowD3(true), 6500);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 

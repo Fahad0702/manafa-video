@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useVideoPlayer } from '@/lib/video/hooks';
-import { useSceneAudio } from '@/lib/video/useSceneAudio';
 import ArcMotif from './ArcMotif';
 import TransportBar from './TransportBar';
 
@@ -30,13 +29,13 @@ const SCENE_DURATIONS = {
   s05_manafa: 8600,
   s06_network: 16200,
   s06b_difference: 12200,
-  s07_divider: 2300,
+  s07_divider: 2600,
   s08_dashboard: 8900,
   s09_invoices: 7000,
   s10_offer: 8300,
   s10b_processing: 6700,
-  s11_complete: 4700,
-  s12_end: 2800,
+  s11_complete: 5200,
+  s12_end: 4500,
 };
 
 const ACT_BOUNDARY_SCENES = new Set([5, 7, 8]);
@@ -56,8 +55,6 @@ export default function VideoTemplate() {
     durations: SCENE_DURATIONS,
     loop: true,
   });
-
-  const { muted, toggleMute } = useSceneAudio(currentScene, playing);
 
   const prevScene = useRef(currentScene);
   const [blackout, setBlackout] = useState(false);
@@ -163,9 +160,7 @@ export default function VideoTemplate() {
 
         <TransportBar
           playing={playing}
-          muted={muted}
           onTogglePlayPause={togglePlayPause}
-          onToggleMute={toggleMute}
           onSeekToScene={seekToScene}
           currentScene={currentScene}
           totalScenes={totalScenes}

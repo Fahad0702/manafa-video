@@ -13,10 +13,10 @@ export default function Scene00_Intro() {
   const [showGlow, setShowGlow] = useState(false);
 
   useSceneTimer([
-    { time: 400, callback: () => setShowGlow(true) },
-    { time: 800, callback: () => setShowLogo(true) },
-    { time: 1800, callback: () => setShowLine1(true) },
-    { time: 2600, callback: () => setShowLine2(true) },
+    { time: 200, callback: () => setShowGlow(true) },
+    { time: 500, callback: () => setShowLogo(true) },
+    { time: 1300, callback: () => setShowLine1(true) },
+    { time: 2000, callback: () => setShowLine2(true) },
   ]);
 
   return (

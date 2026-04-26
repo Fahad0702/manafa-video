@@ -290,10 +290,10 @@ export default function Scene06b_Difference() {
   const [showClosing, setShowClosing] = useState(false);
 
   useSceneTimer([
-    { time: 400, callback: () => setActiveMetric(0) },
-    { time: 4200, callback: () => setActiveMetric(1) },
-    { time: 8000, callback: () => setActiveMetric(2) },
-    { time: 11200, callback: () => { setActiveMetric(-1); setShowClosing(true); } },
+    { time: 300, callback: () => setActiveMetric(0) },
+    { time: 3800, callback: () => setActiveMetric(1) },
+    { time: 7300, callback: () => setActiveMetric(2) },
+    { time: 10600, callback: () => { setActiveMetric(-1); setShowClosing(true); } },
   ]);
 
   return (

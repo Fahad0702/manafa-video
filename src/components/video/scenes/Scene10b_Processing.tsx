@@ -16,9 +16,9 @@ export default function Scene10b_Processing() {
   const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShowSpinner(true), 300);
-    const t2 = setTimeout(() => setShowLogos(true), 600);
-    const t3 = setTimeout(() => setShowText(true), 1000);
+    const t1 = setTimeout(() => setShowSpinner(true), 250);
+    const t2 = setTimeout(() => setShowLogos(true), 700);
+    const t3 = setTimeout(() => setShowText(true), 900);
     return () => {
       [t1, t2, t3].forEach(clearTimeout);
     };

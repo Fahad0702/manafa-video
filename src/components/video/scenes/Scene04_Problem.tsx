@@ -122,15 +122,15 @@ export default function Scene04_Problem() {
     : 0;
 
   useSceneTimer([
-    { time: 800,   callback: () => { if (mountedRef.current) { setVisibleCount(1); } } },
-    { time: 2800,  callback: () => { if (mountedRef.current) { setVisibleCount(2); } } },
-    { time: 4800,  callback: () => { if (mountedRef.current) { setVisibleCount(3); } } },
-    { time: 6800,  callback: () => { if (mountedRef.current) { setVisibleCount(4); } } },
-    { time: 8800,  callback: () => { if (mountedRef.current) { setVisibleCount(5); } } },
-    { time: 10800, callback: () => { if (mountedRef.current) { setVisibleCount(6); } } },
-    { time: 13500, callback: () => { if (mountedRef.current) setCollapsed(true); } },
-    { time: 13800, callback: () => { if (mountedRef.current) { setShowVerdict(true); } } },
-    { time: 14800, callback: () => { if (mountedRef.current) setShowSubline(true); } },
+    { time: 700,   callback: () => { if (mountedRef.current) { setVisibleCount(1); } } },
+    { time: 2300,  callback: () => { if (mountedRef.current) { setVisibleCount(2); } } },
+    { time: 3900,  callback: () => { if (mountedRef.current) { setVisibleCount(3); } } },
+    { time: 5500,  callback: () => { if (mountedRef.current) { setVisibleCount(4); } } },
+    { time: 7100,  callback: () => { if (mountedRef.current) { setVisibleCount(5); } } },
+    { time: 8800,  callback: () => { if (mountedRef.current) { setVisibleCount(6); } } },
+    { time: 11800, callback: () => { if (mountedRef.current) setCollapsed(true); } },
+    { time: 12100, callback: () => { if (mountedRef.current) { setShowVerdict(true); } } },
+    { time: 13400, callback: () => { if (mountedRef.current) setShowSubline(true); } },
   ]);
 
   return (

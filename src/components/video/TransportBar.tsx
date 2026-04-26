@@ -2,9 +2,7 @@ import React, { useRef, useCallback } from 'react';
 
 interface TransportBarProps {
   playing: boolean;
-  muted: boolean;
   onTogglePlayPause: () => void;
-  onToggleMute: () => void;
   onSeekToScene: (index: number) => void;
   currentScene: number;
   totalScenes: number;
@@ -23,9 +21,7 @@ function formatTime(ms: number): string {
 
 export default function TransportBar({
   playing,
-  muted,
   onTogglePlayPause,
-  onToggleMute,
   onSeekToScene,
   currentScene,
   totalScenes,
@@ -201,58 +197,6 @@ export default function TransportBar({
         {formatTime(totalDuration)}
       </span>
 
-      <button
-        onClick={onToggleMute}
-        className="flex items-center justify-center shrink-0"
-        style={{
-          width: 36,
-          height: 36,
-          borderRadius: 18,
-          background: 'rgba(255,255,255,0.1)',
-          border: '1px solid rgba(255,255,255,0.15)',
-          cursor: 'pointer',
-          transition: 'background 0.2s',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-        }}
-        aria-label={muted ? 'Unmute' : 'Mute'}
-      >
-        {muted ? (
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="rgba(255,255,255,0.65)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <line x1="23" y1="9" x2="17" y2="15" />
-            <line x1="17" y1="9" x2="23" y2="15" />
-          </svg>
-        ) : (
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="rgba(255,255,255,0.65)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          </svg>
-        )}
-      </button>
     </div>
   );
 }

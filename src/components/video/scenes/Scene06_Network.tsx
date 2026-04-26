@@ -20,14 +20,15 @@ export default function Scene06_Network() {
 
   useEffect(() => {
     const t0 = setTimeout(() => setShowCenter(true), 400);
-    const t1 = setTimeout(() => setShowRing(true), 1000);
-    const t2 = setTimeout(() => setPartnerCount(1), 1600);
-    const t3 = setTimeout(() => setPartnerCount(2), 2200);
-    const t4 = setTimeout(() => setPartnerCount(3), 2800);
-    const t5 = setTimeout(() => setPartnerCount(4), 3400);
-    const t6 = setTimeout(() => setPartnerCount(5), 4000);
-    const t7 = setTimeout(() => setShowConnectors(true), 4600);
-    const t8 = setTimeout(() => setShowTagline(true), 6000);
+    const t1 = setTimeout(() => setShowRing(true), 1100);
+    // Partners appear in sync with the narrator naming each one.
+    const t2 = setTimeout(() => setPartnerCount(1), 4200);
+    const t3 = setTimeout(() => setPartnerCount(2), 5500);
+    const t4 = setTimeout(() => setPartnerCount(3), 6800);
+    const t5 = setTimeout(() => setPartnerCount(4), 8100);
+    const t6 = setTimeout(() => setPartnerCount(5), 9400);
+    const t7 = setTimeout(() => setShowConnectors(true), 10500);
+    const t8 = setTimeout(() => setShowTagline(true), 12500);
     return () => {
       [t0, t1, t2, t3, t4, t5, t6, t7, t8].forEach(clearTimeout);
     };
