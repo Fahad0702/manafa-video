@@ -8,6 +8,7 @@ const FUNDER_LOGOS = [
   { id: 'snb', src: `${BASE}logos/snb.png`, name: 'SNB' },
   { id: 'sab', src: `${BASE}logos/sab.png`, name: 'SAB' },
   { id: 'sidf', src: `${BASE}logos/sidf.png`, name: 'SIDF' },
+  { id: 'jpmorgan', src: `${BASE}logos/jpmorgan.svg`, name: 'JPMorgan' },
 ];
 
 export default function Scene10b_Processing() {
@@ -91,7 +92,7 @@ export default function Scene10b_Processing() {
               transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
             >
               {FUNDER_LOGOS.map((logo, i) => {
-                const angleOffset = (360 / 3) * i - 90;
+                const angleOffset = (360 / FUNDER_LOGOS.length) * i - 90;
                 const orbitRadius = 120;
                 const cx = 100 + Math.cos((angleOffset * Math.PI) / 180) * orbitRadius - 28;
                 const cy = 100 + Math.sin((angleOffset * Math.PI) / 180) * orbitRadius - 28;

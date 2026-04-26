@@ -9,6 +9,7 @@ const PARTNERS = [
   { id: 'sec', src: `${BASE}logos/sec.png`, width: 80, height: 68 },
   { id: 'sab', src: `${BASE}logos/sab.png`, width: 110, height: 38 },
   { id: 'sidf', src: `${BASE}logos/sidf.png`, width: 115, height: 44 },
+  { id: 'jpmorgan', src: `${BASE}logos/jpmorgan.svg`, width: 120, height: 26 },
 ];
 
 export default function Scene06_Network() {
@@ -26,10 +27,11 @@ export default function Scene06_Network() {
     const t4 = setTimeout(() => setPartnerCount(3), 2800);
     const t5 = setTimeout(() => setPartnerCount(4), 3400);
     const t6 = setTimeout(() => setPartnerCount(5), 4000);
-    const t7 = setTimeout(() => setShowConnectors(true), 4600);
-    const t8 = setTimeout(() => setShowTagline(true), 6000);
+    const t7 = setTimeout(() => setPartnerCount(6), 4600);
+    const t8 = setTimeout(() => setShowConnectors(true), 5200);
+    const t9 = setTimeout(() => setShowTagline(true), 6600);
     return () => {
-      [t0, t1, t2, t3, t4, t5, t6, t7, t8].forEach(clearTimeout);
+      [t0, t1, t2, t3, t4, t5, t6, t7, t8, t9].forEach(clearTimeout);
     };
   }, []);
 
