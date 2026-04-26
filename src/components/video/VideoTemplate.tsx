@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useVideoPlayer } from '@/lib/video/hooks';
 import { useSceneAudio } from '@/lib/video/useSceneAudio';
+import { useSonicBranding } from '@/lib/video/useSonicBranding';
 import ArcMotif from './ArcMotif';
 import TransportBar from './TransportBar';
 
@@ -58,6 +59,7 @@ export default function VideoTemplate() {
   });
 
   const { muted, toggleMute } = useSceneAudio(currentScene, playing);
+  useSonicBranding(currentScene, playing, muted);
 
   const prevScene = useRef(currentScene);
   const [blackout, setBlackout] = useState(false);
